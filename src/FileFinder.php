@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Khalyomede\PhpTypo;
 
 use Khalyomede\PhpTypo\Exceptions\FileOrFolderNotAString;
-use Khalyomede\PhpTypo\Exceptions\FolderScanException;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
+use SplFileInfo;
 
 final class FileFinder
 {
@@ -70,19 +72,28 @@ final class FileFinder
 
     /**
      * @return array<string>
+     *
+     * @see https://stackoverflow.com/a/24784020/3753055
      */
     private static function getFilesFromFolder(string $folder): array
     {
-        $scannedFilesOrFolders = scandir($folder);
+        $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($folder));
 
-        if ($scannedFilesOrFolders === false) {
-            throw new FolderScanException("Could not scan for files and folders in the following folder: $folder");
+        $files = [];
+
+        foreach ($rii as $file) {
+            assert($file instanceof SplFileInfo);
+
+            if ($file->isDir()) {
+                continue;
+            }
+
+            $files[] = $file->getPathname();
         }
 
-        return array_filter(
-            $scannedFilesOrFolders,
-            fn (string $fileOrFolder): bool => str_ends_with($fileOrFolder, ".php")
-        );
+        sort($files);
+
+        return $files;
     }
 
     /**
@@ -95,11 +106,7 @@ final class FileFinder
     {
         foreach ($filesOrFolders as $fileOrFolder) {
             if (is_dir($fileOrFolder)) {
-                $folderFiles = array_map(
-                    fn (string $subFileOrFolder): string => $fileOrFolder . DIRECTORY_SEPARATOR . $subFileOrFolder,
-                    self::getFilesFromFolder($fileOrFolder)
-                );
-
+                $folderFiles = self::getFilesFromFolder($fileOrFolder);
                 $files = self::addFiles($files, $folderFiles);
             }
 
