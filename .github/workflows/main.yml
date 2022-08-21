@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test
+        run: docker-compose run composer run test
+        
+      - name: Analyse
+        run: docker-compose run composer run analyse
+        
+      - name: Lint
+        run: docker-compose run composer run lint
+        
+      - name: Check updates
+        run: docker-compose run composer run check-updates
+        
+      - name: Audit
+        run: docker-compose run composer audit
