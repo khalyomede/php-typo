@@ -1,0 +1,15 @@
+version: "3"
+services:
+  composer:
+    build: ./docker/php/8.1
+    entrypoint: composer
+    working_dir: /home/alpine/app
+    volumes:
+      - .:/home/alpine/app
+
+  php:
+    build: ./docker/php/8.1
+    entrypoint: php
+    working_dir: /home/alpine/app
+    volumes:
+      - .:/home/alpine/app

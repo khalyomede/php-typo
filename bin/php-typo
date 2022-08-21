@@ -1,0 +1,13 @@
+<?php
+
+use PhpTypo\PhpTypo\Commands\Check;
+use PhpTypo\PhpTypo\Commands\Init;
+use Symfony\Component\Console\Application;
+
+include $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';
+
+$application = new Application;
+
+$application->add(new Check);
+$application->add(new Init);
+$application->run();
