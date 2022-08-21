@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace PhpTypo\PhpTypo\Commands;
+namespace Khalyomede\PhpTypo\Commands;
 
-use PhpTypo\PhpTypo\Checker;
-use PhpTypo\PhpTypo\Exceptions\ConfigFileInvalidJsonFormatException;
-use PhpTypo\PhpTypo\Exceptions\ConfigFileNotFoundException;
-use PhpTypo\PhpTypo\Exceptions\ConfigWriteException;
-use PhpTypo\PhpTypo\Exceptions\FileNotReadableException;
-use PhpTypo\PhpTypo\Exceptions\FileOrFolderNotAString;
-use PhpTypo\PhpTypo\Exceptions\FileOrFolderNotFoundException;
-use PhpTypo\PhpTypo\Exceptions\FolderScanException;
-use PhpTypo\PhpTypo\Exceptions\NotAFileException;
-use PhpTypo\PhpTypo\Exceptions\WordsFileInvalidJsonFormatException;
+use Khalyomede\PhpTypo\Checker;
+use Khalyomede\PhpTypo\Exceptions\ConfigFileInvalidJsonFormatException;
+use Khalyomede\PhpTypo\Exceptions\ConfigFileNotFoundException;
+use Khalyomede\PhpTypo\Exceptions\ConfigWriteException;
+use Khalyomede\PhpTypo\Exceptions\FileNotReadableException;
+use Khalyomede\PhpTypo\Exceptions\FileOrFolderNotAString;
+use Khalyomede\PhpTypo\Exceptions\FileOrFolderNotFoundException;
+use Khalyomede\PhpTypo\Exceptions\FolderScanException;
+use Khalyomede\PhpTypo\Exceptions\NotAFileException;
+use Khalyomede\PhpTypo\Exceptions\WordsFileInvalidJsonFormatException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

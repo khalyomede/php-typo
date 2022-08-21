@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhpTypo\PhpTypo;
+namespace Khalyomede\PhpTypo;
 
 use Exception;
 use Jawira\CaseConverter\Convert;

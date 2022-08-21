@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhpTypo\PhpTypo\Exceptions;
+namespace Khalyomede\PhpTypo\Exceptions;
 
 use Exception;
 

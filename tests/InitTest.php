@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use PhpTypo\PhpTypo\Commands\Init;
+use Khalyomede\PhpTypo\Commands\Init;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 

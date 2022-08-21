@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhpTypo\PhpTypo\Commands;
+namespace Khalyomede\PhpTypo\Commands;
 
-use PhpTypo\PhpTypo\Config;
-use PhpTypo\PhpTypo\Exceptions\ConfigWriteException;
+use Khalyomede\PhpTypo\Config;
+use Khalyomede\PhpTypo\Exceptions\ConfigWriteException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

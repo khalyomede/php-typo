@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use PhpTypo\PhpTypo\Commands\Check;
+use Khalyomede\PhpTypo\Commands\Check;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 

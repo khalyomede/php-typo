@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhpTypo\PhpTypo;
+namespace Khalyomede\PhpTypo;
 
-use PhpTypo\PhpTypo\Exceptions\ConfigFileInvalidJsonFormatException;
-use PhpTypo\PhpTypo\Exceptions\ConfigFileNotFoundException;
-use PhpTypo\PhpTypo\Exceptions\FileNotReadableException;
+use Khalyomede\PhpTypo\Exceptions\ConfigFileInvalidJsonFormatException;
+use Khalyomede\PhpTypo\Exceptions\ConfigFileNotFoundException;
+use Khalyomede\PhpTypo\Exceptions\FileNotReadableException;
 
 final class ConfigFinder
 {

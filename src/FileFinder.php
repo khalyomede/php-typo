@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhpTypo\PhpTypo;
+namespace Khalyomede\PhpTypo;
 
-use PhpTypo\PhpTypo\Exceptions\FileOrFolderNotAString;
-use PhpTypo\PhpTypo\Exceptions\FolderScanException;
+use Khalyomede\PhpTypo\Exceptions\FileOrFolderNotAString;
+use Khalyomede\PhpTypo\Exceptions\FolderScanException;
 
 final class FileFinder
 {

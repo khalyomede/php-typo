@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhpTypo\PhpTypo;
+namespace Khalyomede\PhpTypo;
 
+use Khalyomede\PhpTypo\Exceptions\FileNotReadableException;
+use Khalyomede\PhpTypo\Exceptions\FileOrFolderNotFoundException;
 use PhpParser\NodeTraverser;
 use PhpParser\ParserFactory;
-use PhpTypo\PhpTypo\Exceptions\FileNotReadableException;
-use PhpTypo\PhpTypo\Exceptions\FileOrFolderNotFoundException;
 use Symfony\Component\Console\Output\OutputInterface;
 
 final class Checker

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhpTypo\PhpTypo;
+namespace Khalyomede\PhpTypo;
 
-use PhpTypo\PhpTypo\Exceptions\ConfigWriteException;
+use Khalyomede\PhpTypo\Exceptions\ConfigWriteException;
 
 final class Config
 {

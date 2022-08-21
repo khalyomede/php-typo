@@ -1,7 +1,7 @@
 <?php
 
-use PhpTypo\PhpTypo\Commands\Check;
-use PhpTypo\PhpTypo\Commands\Init;
+use Khalyomede\PhpTypo\Commands\Check;
+use Khalyomede\PhpTypo\Commands\Init;
 use Symfony\Component\Console\Application;
 
 include $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';

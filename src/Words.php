@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhpTypo\PhpTypo;
+namespace Khalyomede\PhpTypo;
 
-use PhpTypo\PhpTypo\Exceptions\ConfigFileInvalidJsonFormatException;
-use PhpTypo\PhpTypo\Exceptions\FileNotReadableException;
-use PhpTypo\PhpTypo\Exceptions\FileOrFolderNotFoundException;
-use PhpTypo\PhpTypo\Exceptions\NotAFileException;
+use Khalyomede\PhpTypo\Exceptions\ConfigFileInvalidJsonFormatException;
+use Khalyomede\PhpTypo\Exceptions\FileNotReadableException;
+use Khalyomede\PhpTypo\Exceptions\FileOrFolderNotFoundException;
+use Khalyomede\PhpTypo\Exceptions\NotAFileException;
 
 final class Words
 {
