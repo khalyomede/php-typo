@@ -28,7 +28,7 @@ final class FileFinder
     }
 
     /**
-     * @param array<string> $filesAndFolders
+     * @param array<mixed> $filesAndFolders
      */
     public function setFilesAndFolders(array $filesAndFolders): self
     {
@@ -36,7 +36,6 @@ final class FileFinder
             if (!is_string($fileOrFolder)) {
                 $type = is_object($fileOrFolder)
                     ? get_class($fileOrFolder)
-                    /** @phpstan-ignore-next-line Else branch is unreachable because ternary operator condition is always true. */
                     : gettype($fileOrFolder);
 
                 throw new FileOrFolderNotAString("The following is not a file or folder: $type");

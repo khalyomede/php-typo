@@ -42,7 +42,9 @@ final class Check extends Command
             return 1;
         }
 
-        return 0;
+        return Checker::foundTypos()
+            ? 1
+            : 0;
     }
 
     protected function configure(): void

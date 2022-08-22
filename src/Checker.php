@@ -21,6 +21,8 @@ final class Checker
 
     public static function check(OutputInterface $output): int
     {
+        self::reset();
+
         $startTime = microtime(true) * 1_000;
 
         $gettingConfigStartTime = microtime(true) * 1_000;
@@ -77,9 +79,19 @@ final class Checker
         $output->writeln("Memory used  $memory MB");
         $output->writeln("");
 
-        return $numberOfTypos > 0
+        return self::foundTypos()
             ? CheckStatus::TypoFound->value
             : CheckStatus::Ok->value;
+    }
+
+    public static function reset(): void
+    {
+        self::$typos = [];
+    }
+
+    public static function foundTypos(): bool
+    {
+        return count(self::$typos) > 0;
     }
 
     private static function checkTypos(string $path): void

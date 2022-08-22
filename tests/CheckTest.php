@@ -72,5 +72,70 @@ test('it can run check which checks for typos', function (): void {
         "Total typos  12",
         "Total files  11",
     ]));
-    expect($code)->toBe(0);
+    expect($code)->toBe(1);
+});
+
+test("it can checks folder containing folders containing files", function (): void {
+    file_put_contents(__DIR__ . "/../php-typo.json", json_encode([
+        "include" => [
+            "tests/folder-containing-folders",
+        ],
+        "exclude" => [],
+        "whitelist" => [
+            "src/words/english.json",
+        ],
+    ]));
+
+    $application = new Application();
+
+    $application->add(new Check());
+
+    $command = $application->find("check");
+    $commandTester = new CommandTester($command);
+
+    $code = $commandTester->execute([]);
+
+    $output = $commandTester->getDisplay();
+
+    $rows = [
+        "TTT",
+        "",
+        "tests/folder-containing-folders/Checks/DatabaseCheck.php:9",
+        '  method "runn" contains an unknown word "runn".',
+        "",
+        "tests/folder-containing-folders/Checks/PingCheck.php:11",
+        '  variable "mesage" contains an unknown word "mesage".',
+        "",
+        "tests/folder-containing-folders/Models/User.php:9",
+        '  property "timetamp" contains an unknown word "timetamp".',
+        "",
+        "Total typos  3",
+        "Total files  3",
+    ];
+
+    expect($output)->toContain(implode("\n", $rows));
+
+    expect($code)->toBe(1);
+});
+
+
+test("it returns 0 if no typos found", function (): void {
+    file_put_contents(__DIR__ . "/../php-typo.json", json_encode([
+        "include" => [
+            "tests/no-errors",
+        ],
+        "exclude" => [],
+        "whitelist" => [
+            "src/words/english.json",
+        ],
+    ]));
+
+    $application = new Application();
+
+    $application->add(new Check());
+
+    $command = $application->find("check");
+    $commandTester = new CommandTester($command);
+
+    expect($commandTester->execute([]))->tobe(0);
 });
