@@ -31,7 +31,7 @@ test('it can run check which checks for typos', function (): void {
     $output = $commandTester->getDisplay();
 
     expect($output)->toContain(join("\n", [
-        "TTTTTTTTTTT",
+        "TTTTTTTTTT.T",
         "",
         "tests/misc/class-constant-typos.php:7",
         '  class constant "APLICATION_PLAIN" contains an unknown word "aplication".',
@@ -70,7 +70,7 @@ test('it can run check which checks for typos', function (): void {
         '  variable "gretingMessage" contains an unknown word "greting".',
         "",
         "Total typos  12",
-        "Total files  11",
+        "Total files  12",
     ]));
     expect($code)->toBe(1);
 });

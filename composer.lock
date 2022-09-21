@@ -4,74 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a362b91afc3642d5a775b373d3605fd",
+    "content-hash": "5f65022572e23a290cbeea38317f731e",
     "packages": [
         {
-            "name": "jawira/case-converter",
-            "version": "v3.5.1",
+            "name": "aminnairi/string-extra",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jawira/case-converter.git",
-                "reference": "2be05b98dcb743bef60ab6f849145bd3434ed003"
+                "url": "https://github.com/aminnairi/php-string-extra.git",
+                "reference": "a2bf0f566f5b8d76716654ebcf434a94a70df458"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jawira/case-converter/zipball/2be05b98dcb743bef60ab6f849145bd3434ed003",
-                "reference": "2be05b98dcb743bef60ab6f849145bd3434ed003",
+                "url": "https://api.github.com/repos/aminnairi/php-string-extra/zipball/a2bf0f566f5b8d76716654ebcf434a94a70df458",
+                "reference": "a2bf0f566f5b8d76716654ebcf434a94a70df458",
                 "shasum": ""
             },
             "require": {
-                "ext-mbstring": "*",
-                "php": ">=7.4"
+                "php": ">=8.0.0"
             },
             "require-dev": {
-                "behat/behat": "^3.0",
-                "phpstan/phpstan": "^1.0",
-                "phpunit/phpunit": "^9.0",
-                "vimeo/psalm": "^4.0"
-            },
-            "suggest": {
-                "pds/skeleton": "PHP Package Development Standards",
-                "phing/phing": "PHP Build Tool"
+                "pestphp/pest": "^1.22"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Jawira\\CaseConverter\\": "src/"
+                    "Aminnairi\\StringExtra\\": "./sources/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "GPL-3.0-or-later"
             ],
-            "authors": [
-                {
-                    "name": "Jawira Portugal",
-                    "email": "dev@tugal.be"
-                }
-            ],
-            "description": "Convert strings between 13 naming conventions: Snake case, Camel case, Pascal case, Kebab case, Ada case, Train case, Cobol case, Macro case, Upper case, Lower case, Sentence case, Title case and Dot notation.",
-            "homepage": "https://jawira.github.io/case-converter/",
+            "description": "Extra utilities for working with strings in PHP.",
+            "homepage": "https://github.com/aminnairi/php-string-extra",
             "keywords": [
-                "Ada case",
-                "Cobol case",
-                "Macro case",
-                "Train case",
-                "camel case",
-                "dot notation",
-                "kebab case",
-                "lower case",
-                "pascal case",
-                "sentence case",
-                "snake case",
-                "title case",
-                "upper case"
+                "extra",
+                "string"
             ],
             "support": {
-                "issues": "https://github.com/jawira/case-converter/issues",
-                "source": "https://github.com/jawira/case-converter/tree/v3.5.1"
+                "issues": "https://github.com/aminnairi/php-string-extra/issues",
+                "source": "https://github.com/aminnairi/php-string-extra/tree/0.1.0"
             },
-            "time": "2022-08-14T11:40:18+00:00"
+            "time": "2022-09-03T20:54:34+00:00"
         },
         {
             "name": "nikic/php-parser",
