@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Reduced false positives by ignoring numbers ([#1](https://github.com/khalyomede/php-typo/issues/1)).
+
 ### Fixed
 
 - "__toString" will now be correctly understood as 2 words "to" and "string" instead of "tostring" ([#2](https://github.com/khalyomede/php-typo/issues/2)).
