@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2022-09-21
+
 ### Added
 
 - Reduced false positives by ignoring numbers ([#1](https://github.com/khalyomede/php-typo/issues/1)).

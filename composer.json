@@ -3,7 +3,7 @@
     "description": "A command line tool to validate files do not have English typo in variables, methods, functions, ...",
     "type": "library",
     "license": "MIT",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "autoload": {
         "psr-4": {
             "Khalyomede\\PhpTypo\\": "src/"
