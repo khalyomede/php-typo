@@ -31,8 +31,7 @@
         "test": "pest",
         "lint": "php-cs-fixer fix --diff --using-cache=no --allow-risky=yes --dry-run",
         "format": "php-cs-fixer --using-cache=no --allow-risky=yes fix",
-        "check-updates": "composer outdated --strict --direct --ignore jawira/case-converter",
-        "typo": "php-typo"
+        "check-updates": "composer outdated --strict --direct --ignore jawira/case-converter"
     },
     "require-dev": {
         "phpstan/phpstan": "1.8.5",
