@@ -78,4 +78,40 @@ final class Words
     {
         self::$words = array_diff(self::$words, $words);
     }
+
+    /**
+     * @param array<string> $wordsAndNumbers
+     *
+     * @return array<string>
+     */
+    public static function clean(array $wordsAndNumbers): array
+    {
+        return self::lowerWords(self::keepWordsOnly($wordsAndNumbers));
+    }
+
+    /**
+     * @param array<string> $wordsAndNumbers
+     *
+     * @return array<string>
+     */
+    public static function keepWordsOnly(array $wordsAndNumbers): array
+    {
+        return array_filter(
+            $wordsAndNumbers,
+            fn (string $word): bool => preg_match("/^[^0-9]+$/", $word) === 1
+        );
+    }
+
+    /**
+     * @param array<string> $words
+     *
+     * @return array<string>
+     */
+    private static function lowerWords(array $words): array
+    {
+        return array_map(
+            fn (string $word): string => strtolower($word),
+            $words
+        );
+    }
 }

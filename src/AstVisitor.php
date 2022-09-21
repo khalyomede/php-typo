@@ -161,7 +161,8 @@ final class AstVisitor extends NodeVisitorAbstract
     private static function getWordsFromNodeName(Node $node): array
     {
         $nodeName = self::getNodeName($node);
+        $words = explode(" ", StringExtra::toSentenceCase($nodeName));
 
-        return array_map(fn (string $word): string => strtolower($word), explode(" ", StringExtra::toSentenceCase($nodeName)));
+        return Words::clean($words);
     }
 }
