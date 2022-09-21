@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Khalyomede\PhpTypo;
 
+use Aminnairi\StringExtra\StringExtra;
 use Exception;
-use Jawira\CaseConverter\Convert;
 use PhpParser\Node;
 use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\Identifier;
@@ -161,8 +161,7 @@ final class AstVisitor extends NodeVisitorAbstract
     private static function getWordsFromNodeName(Node $node): array
     {
         $nodeName = self::getNodeName($node);
-        $name = new Convert($nodeName);
 
-        return explode(" ", $name->toLower());
+        return array_map(fn (string $word): string => strtolower($word), explode(" ", StringExtra::toSentenceCase($nodeName)));
     }
 }
