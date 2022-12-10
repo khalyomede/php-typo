@@ -17,9 +17,9 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=8.1.0",
-        "nikic/php-parser": "4.15.1",
-        "symfony/console": "6.1.4",
+        "php": ">=8.2.0",
+        "nikic/php-parser": "4.15.2",
+        "symfony/console": "6.2.1",
         "aminnairi/string-extra": "0.1.0"
     },
     "bin": [
@@ -29,15 +29,15 @@
         "typo": "php-typo",
         "analyse": "phpstan",
         "test": "pest",
-        "lint": "php-cs-fixer fix --diff --using-cache=no --allow-risky=yes --dry-run",
+        "lint": "PHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer fix --diff --using-cache=no --allow-risky=yes --dry-run",
         "format": "php-cs-fixer --using-cache=no --allow-risky=yes fix",
         "check-updates": "composer outdated --strict --direct"
     },
     "require-dev": {
-        "phpstan/phpstan": "1.8.5",
-        "pestphp/pest": "1.22.1",
-        "friendsofphp/php-cs-fixer": "3.11.0",
-        "phpstan/phpstan-strict-rules": "1.4.3"
+        "phpstan/phpstan": "1.9.2",
+        "pestphp/pest": "1.22.3",
+        "friendsofphp/php-cs-fixer": "3.13.0",
+        "phpstan/phpstan-strict-rules": "1.4.4"
     },
     "config": {
         "allow-plugins": {
