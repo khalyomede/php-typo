@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -10,7 +10,7 @@ RUN add-apt-repository ppa:ondrej/php
 RUN apt-get update
 RUN apt-get upgrade --yes
 # PHP
-RUN apt-get install --yes php8.1 php8.1-zip php8.1-curl php8.1-dom
+RUN apt-get install --yes php8.2 php8.2-zip php8.2-curl php8.2-dom
 # Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php
