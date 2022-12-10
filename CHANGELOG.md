@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2022-12-10
+
+### Added
+
+- Support for PHP 8.2 ([#6](https://github.com/khalyomede/php-typo/issues/6)).
+
+## Breaking
+
+- Dropped support for PHP 8.1 ([#6](https://github.com/khalyomede/php-typo/issues/6)).
+
 ## [0.2.0] - 2022-09-21
 
 ### Added
