@@ -28,5 +28,8 @@ jobs:
       - name: Audit
         run: docker-compose run composer run check
 
+      - name: Check modern code
+        run: docker-compose run composer run scan
+
       - name: Check updates
         run: docker-compose run composer run updates

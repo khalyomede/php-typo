@@ -53,16 +53,34 @@ final class AstVisitor extends NodeVisitorAbstract
 
     private static function nodeShouldBeScanned(Node $node): bool
     {
-        return self::nodeIsVariable($node)
-            || self::nodeIsFunction($node)
-            || self::nodeIsMethod($node)
-            || self::nodeIsClass($node)
-            || self::nodeIsProperty($node)
-            || self::nodeIsInterface($node)
-            || self::nodeIsEnum($node)
-            || self::nodeIsEnumCase($node)
-            || self::nodeIsclassConstant($node)
-            || self::nodeIsConst($node);
+        if (self::nodeIsVariable($node)) {
+            return true;
+        }
+        if (self::nodeIsFunction($node)) {
+            return true;
+        }
+        if (self::nodeIsMethod($node)) {
+            return true;
+        }
+        if (self::nodeIsClass($node)) {
+            return true;
+        }
+        if (self::nodeIsProperty($node)) {
+            return true;
+        }
+        if (self::nodeIsInterface($node)) {
+            return true;
+        }
+        if (self::nodeIsEnum($node)) {
+            return true;
+        }
+        if (self::nodeIsEnumCase($node)) {
+            return true;
+        }
+        if (self::nodeIsclassConstant($node)) {
+            return true;
+        }
+        return self::nodeIsConst($node);
     }
 
     private static function nodeIsVariable(Node $node): bool
@@ -121,15 +139,27 @@ final class AstVisitor extends NodeVisitorAbstract
             /** @phpstan-ignore-next-line Access to an undefined property PhpParser\Node::$name. */
             return $node->name;
         }
-
-        if (
-            self::nodeIsFunction($node)
-            || self::nodeIsMethod($node)
-            || self::nodeIsClass($node)
-            || self::nodeIsInterface($node)
-            || self::nodeIsEnum($node)
-            || self::nodeIsEnumCase($node)
-        ) {
+        if (self::nodeIsFunction($node)) {
+            /** @phpstan-ignore-next-line Access to an undefined property PhpParser\Node::$name. */
+            return $node->name->name;
+        }
+        if (self::nodeIsMethod($node)) {
+            /** @phpstan-ignore-next-line Access to an undefined property PhpParser\Node::$name. */
+            return $node->name->name;
+        }
+        if (self::nodeIsClass($node)) {
+            /** @phpstan-ignore-next-line Access to an undefined property PhpParser\Node::$name. */
+            return $node->name->name;
+        }
+        if (self::nodeIsInterface($node)) {
+            /** @phpstan-ignore-next-line Access to an undefined property PhpParser\Node::$name. */
+            return $node->name->name;
+        }
+        if (self::nodeIsEnum($node)) {
+            /** @phpstan-ignore-next-line Access to an undefined property PhpParser\Node::$name. */
+            return $node->name->name;
+        }
+        if (self::nodeIsEnumCase($node)) {
             /** @phpstan-ignore-next-line Access to an undefined property PhpParser\Node::$name. */
             return $node->name->name;
         }
