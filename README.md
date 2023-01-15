@@ -126,7 +126,7 @@ composer run test
 composer run analyse
 composer run lint
 composer run updates
-composer audit
+composer run check
 ```
 
 Or
