@@ -125,6 +125,12 @@ On the next check, the words "greting" and "php" will be counted as correct word
 composer run test
 composer run analyse
 composer run lint
-composer run check-updates
+composer run updates
 composer audit
+```
+
+Or
+
+```bash
+composer run all
 ```
