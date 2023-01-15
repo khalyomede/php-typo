@@ -26,7 +26,7 @@ jobs:
         run: docker-compose run composer run lint
 
       - name: Check updates
-        run: docker-compose run composer run check-updates
+        run: docker-compose run composer run updates
 
       - name: Audit
         run: docker-compose run composer audit
