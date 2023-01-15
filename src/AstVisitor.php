@@ -24,14 +24,6 @@ final class AstVisitor extends NodeVisitorAbstract
 {
     public function enterNode(Node $node)
     {
-        // if ($node instanceof Const_) {
-        //     print_r($node);
-
-        //     die();
-        // }
-
-        // var_dump(get_class($node));
-
         if (self::nodeShouldBeScanned($node)) {
             $words = self::getWordsFromNodeName($node);
 
