@@ -30,16 +30,19 @@
         "analyse": "phpstan",
         "test": "pest",
         "lint": "PHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer fix --diff --using-cache=no --allow-risky=yes --dry-run",
-        "format": "php-cs-fixer --using-cache=no --allow-risky=yes fix",
+        "format": "PHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer --using-cache=no --allow-risky=yes fix",
         "check": "composer audit --locked --no-dev",
         "updates": "composer outdated --strict --direct",
-        "all": "composer run test && composer run analyse && composer run lint && composer run check && composer run updates"
+        "scan": "rector process --dry-run",
+        "modernize": "rector process",
+        "all": "composer run test && composer run analyse && composer run lint && composer run check && composer run scan && composer run updates"
     },
     "require-dev": {
         "phpstan/phpstan": "1.9.11",
         "pestphp/pest": "1.22.3",
         "friendsofphp/php-cs-fixer": "3.13.2",
-        "phpstan/phpstan-strict-rules": "1.4.5"
+        "phpstan/phpstan-strict-rules": "1.4.5",
+        "rector/rector": "0.15.7"
     },
     "config": {
         "allow-plugins": {

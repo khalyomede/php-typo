@@ -34,9 +34,7 @@ final class FileFinder
     {
         foreach ($filesAndFolders as $fileOrFolder) {
             if (!is_string($fileOrFolder)) {
-                $type = is_object($fileOrFolder)
-                    ? get_class($fileOrFolder)
-                    : gettype($fileOrFolder);
+                $type = get_debug_type($fileOrFolder);
 
                 throw new FileOrFolderNotAString("The following is not a file or folder: $type");
             }

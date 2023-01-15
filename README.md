@@ -126,6 +126,7 @@ composer run test
 composer run analyse
 composer run lint
 composer run updates
+composer run scan
 composer run check
 ```
 
