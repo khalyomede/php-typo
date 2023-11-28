@@ -7,7 +7,6 @@ use Rector\DeadCode\Rector\Node\RemoveNonExistingVarAnnotationRector;
 use Rector\Php70\Rector\StaticCall\StaticCallOnNonStaticToInstanceCallRector;
 use Rector\Php80\Rector\FuncCall\ClassOnObjectRector;
 use Rector\Php81\Rector\Array_\FirstClassCallableRector;
-use Rector\Privatization\Rector\Class_\ChangeReadOnlyVariableWithDefaultValueToConstantRector;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 
@@ -22,8 +21,6 @@ return static function (RectorConfig $rectorConfig): void {
         StaticCallOnNonStaticToInstanceCallRector::class,
         FirstClassCallableRector::class,
         RemoveNonExistingVarAnnotationRector::class,
-        RemoveLastReturnRector::class,
-        ChangeReadOnlyVariableWithDefaultValueToConstantRector::class,
         __DIR__ . "/tests/misc",
         __DIR__ . "/tests/folder-containing-folders",
     ]);
