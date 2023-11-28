@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -33,3 +33,29 @@ jobs:
 
       - name: Check updates
         run: docker-compose run composer run updates
+
+  test_82:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: docker-compose run composer82 install
+
+      - name: Test
+        run: docker-compose run composer82 run test
+
+      - name: Analyse
+        run: docker-compose run composer82 run analyse
+
+      - name: Lint
+        run: docker-compose run composer82 run lint
+
+      - name: Audit
+        run: docker-compose run composer82 run check
+
+      - name: Check modern code
+        run: docker-compose run composer82 run scan
+
+      - name: Check updates
+        run: docker-compose run composer82 run updates

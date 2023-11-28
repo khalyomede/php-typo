@@ -14,14 +14,16 @@ use Khalyomede\PhpTypo\Exceptions\FileOrFolderNotFoundException;
 use Khalyomede\PhpTypo\Exceptions\FolderScanException;
 use Khalyomede\PhpTypo\Exceptions\NotAFileException;
 use Khalyomede\PhpTypo\Exceptions\WordsFileInvalidJsonFormatException;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[AsCommand(
+    name: "check"
+)]
 final class Check extends Command
 {
-    protected static $defaultName = "check";
-
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         try {

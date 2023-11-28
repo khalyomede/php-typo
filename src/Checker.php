@@ -122,7 +122,7 @@ final class Checker
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new AstVisitor());
 
-        $ast = $traverser->traverse($ast);
+        $traverser->traverse($ast);
     }
 
     private static function printTypos(OutputInterface $output): void

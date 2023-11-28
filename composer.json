@@ -18,8 +18,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=8.2.0",
-        "nikic/php-parser": "4.15.2",
-        "symfony/console": "6.2.3",
+        "nikic/php-parser": "4.17.1",
+        "symfony/console": "6.3.8",
         "aminnairi/string-extra": "0.1.0"
     },
     "bin": [
@@ -38,11 +38,11 @@
         "all": "composer run test && composer run analyse && composer run lint && composer run check && composer run scan && composer run updates"
     },
     "require-dev": {
-        "phpstan/phpstan": "1.9.11",
-        "pestphp/pest": "1.22.3",
-        "friendsofphp/php-cs-fixer": "3.13.2",
-        "phpstan/phpstan-strict-rules": "1.4.5",
-        "rector/rector": "0.15.7"
+        "phpstan/phpstan": "1.10.46",
+        "pestphp/pest": "2.25.0",
+        "friendsofphp/php-cs-fixer": "3.40.0",
+        "phpstan/phpstan-strict-rules": "1.5.2",
+        "rector/rector": "0.18.11"
     },
     "config": {
         "allow-plugins": {
